@@ -1,9 +1,12 @@
-const submitButton = document.querySelector('#submit');
+const user = document.querySelector('#username');
+const submitBtn = document.querySelector('#submit');
 
-let user = localStorage.getItem('count');
+let userData = localStorage.getItem('userData');
 
-counter.textContent = count;
+user.textcontent = userData;
 
-submitButton.addEventListener('click', function () {
-   
-  });
+submitBtn.addEventListener('click', function () {
+    let userData = user.value
+    user.textcontent = userData;
+    localStorage.setItem('userData', userData);
+});
