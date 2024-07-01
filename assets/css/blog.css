@@ -1,0 +1,12 @@
+        /* CSS styles for light mode */
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        /* CSS styles for dark mode */
+        body.dark-mode {
+            background-color: #333;
+            color: #f0f0f0;
+        }
