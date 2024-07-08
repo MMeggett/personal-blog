@@ -7,65 +7,46 @@ let userData = localStorage.getItem('userData');
 let title = localStorage.getItem('title');
 let content = localStorage.getItem('content')
 
-let blogPosts = [
-    {
-        username: '',
-        title: '',
-        content: '' 
-    }]
+let blogPosts = [];
+// export { blogPosts };
+
+function blogPost(username, title, content) {
+    this.username = username;
+    this.title = title;
+    this.content = content;
+    let newPost = {
+        username: username,
+        title: title,
+        content: content
+    };
+    blogPosts.push(newPost);
+    console.log(newPost)
+}
 
 user.textcontent = userData;
 titleData.textcontent = title;
 contentData.textcontent = content;
 
-// let i = localStorage.getItem('i');
-// i.value = '0';
-
-// let blogName = blogPosts[i].username;
-// let blogTitle = blogPosts[i].title;
-// let blogContent = blogPosts[i].content;
-
-function saveUserName() {
+function saveData() {
     let userData = user.value
-    user.textcontent = userData;
-    // blogName = userData
-    localStorage.setItem('userData', userData);    
-}
-
-function saveTitle() {
     let title = titleData.value
-    titleData.textcontent = title;
-    // blogTitle = title;
-    localStorage.setItem('title', title);
-    
-}
-
-function saveContent() {
     let content = contentData.value;
-    contentData.textcontent = content;
-    // blogContent = content
-    localStorage.setItem('content', content);
+    const data = new blogPost(userData, title, content);
+    console.log(data)
+}
+function savetoArray() {
+    console.log(blogPosts);
+
+    // blogPosts.push(blogPost);
+    localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+    console.log(blogPosts)
 }
 
 function loadBlogForm() {
-window.location.href = 'blog.html';
+    window.location.href = 'blog.html';
 }
-
 submitBtn.addEventListener('click', function submitBlogData() {
-    // console.log('blogposts length >>>>> ' + blogPosts.length)
-    saveUserName();
-    saveTitle();
-    saveContent();
-    loadBlogForm();
-    // console.log('hi')
-    // console.log(blogName);
-    // console.log(blogTitle);
-    // console.log(blogContent);
-    // console.log('blogposts length >>>>> ' + blogPosts.length)
+    saveData();
+    savetoArray();
+    // loadBlogForm();
 });
-
-// functions to set them to i
-// function to add one to i
-
-    // blogPosts.length + 1 = i;
-
