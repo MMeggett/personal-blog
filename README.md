@@ -13,7 +13,7 @@ N/A
 
 After loading the page the user will be shown a form requiring them to entire the username, blog title, and blog content. After submitting they will be taken a page that displays all previous blogposts and can click on each individual post to see their details.
 
-![Screenshot](assets\Screenshot(82).png)
+![Screenshot](assets\Screenshot (82).png)
 
 https://mmeggett.github.io/personal-blog/
 
